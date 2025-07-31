@@ -1,5 +1,10 @@
 # amd-gpu-torch-runtime-patch
 
+<p align="center">
+  <img src="assets/fade_wallpaper.png" width="600">
+</p>
+
+
 ```markdown
 amd-gpu-torch-runtime-patch/
 ├── README.md
