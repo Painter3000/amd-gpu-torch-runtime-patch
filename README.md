@@ -506,7 +506,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 # 🔧 Setze FADE-Parameter für reproduzierbare Performance
 os.environ["FADE_FORCE_WARP_SIZE"] = "64"
-os.environ["FADE_FORCE_MP_COUNT"] = "72"
+os.environ["FADE_FORCE_MP_COUNT"] = "72" // Wert für andere GPUs dementsprechend anpassen / Adjust value for other GPUs accordingly
 
 # 🔕 Deaktiviere FADE-Logger für saubere Ausgabe
 logging.getLogger("FADE").setLevel(logging.CRITICAL)
