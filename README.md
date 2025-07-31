@@ -20,7 +20,7 @@ amd-gpu-torch-runtime-patch/
 
 Tested on: **AMD Radeon RX 6800 XT** (RDNA2 / `gfx1030`)  
 Supports: RX 6000, RX 7000, and other AMD GPUs under ROCm
-
+````
 ---
 
 ## 🛠️ Quick Installation & Test
