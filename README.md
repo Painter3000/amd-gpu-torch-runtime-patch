@@ -1,7 +1,7 @@
 # amd-gpu-torch-runtime-patch
 
 ```markdown
-fade-runtime-patch/
+amd-gpu-torch-runtime-patch/
 ├── README.md
 ├── fade_v11_plus.py
 ├── LICENSE (MIT)
