@@ -100,10 +100,20 @@ Anyone using AMD GPUs for serious workloads should be aware of these limitations
 > FADE corrects this at runtime – without changing PyTorch source!
 
 ---
+## 🧪 Realistic CPU vs GPU Benchmark (FADE v1.1+ Active)
 
-## 🖥️ CPU-GPU Benchmark Results (AMD 5950X) 
+- AMD Radeon RX 6800 XT (RDNA2 · gfx1030)
+- AMD Ryzen 9 5950X 16-Core Processor
+- PyTorch 2.9.0a0 + ROCm
+- FADE Runtime Patch v1.1+
 
 ```bash
+python3 examples/cpu-gpu_bench_test.py --size 4096 --runs 5 --cpu --event
+```
+
+### ✅ Output:
+
+```
 🚀 FADE Benchmark: Matrix Multiplication on GPU
 📐 Size: 4096×4096, 🔁 Runs: 5
 
@@ -118,7 +128,17 @@ Run 5: 6.75 ms
 🐢 CPU duration: 128.69 ms @ 4096×4096
 
 ⚖️ GPU vs CPU Speedup: ~14.5x
-````
+```
+
+### 📌 Notes:
+
+* FADE corrects PyTorch's underreporting of AMD hardware properties
+* No rebuild or C++ compilation required
+* GPU fully utilized: 72 MPs × 64 warp = **4608 threads**
+* Compatible with any AMD RDNA2 GPU (gfx1030+)
+
+---
+
 ---
 
 ## 📦 Installation
