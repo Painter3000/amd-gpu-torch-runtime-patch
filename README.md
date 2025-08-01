@@ -129,7 +129,7 @@ Run 5: 6.75 ms
 
 ⚖️ GPU vs CPU Speedup: ~14.5x
 ```
-### FADE v1.1+ matrix multiplication at 2048×2048 over 50 runs:
+### 🧪 FADE v1.1+ matrix multiplication at 2048×2048 over 50 runs:
 ```bash
 python3 ./examples/cpu-gpu_bench_test.py --size 2048 --runs 50 --cpu --event
 ```
@@ -167,6 +167,101 @@ Run 50: 0.95 ms
 Benchmark @ 2048×2048 over 50 runs:
 ![2048x2048-Bench](assets/benchmark_plot_2048x2048.png)
 
+## 🧪 Micro-Benchmark @ 1024×1024 (FADE v1.1+)
+
+```bash
+python3 ./examples/cpu-gpu_bench_test.py --size 1024 --runs 50 --cpu --event
+```
+### ✅ Output:
+
+```
+🚀 FADE Benchmark: Matrix Multiplication on GPU
+📐 Size: 1024×1024, 🔁 Runs: 50
+
+🔥 GPU Warmup @ 1024×1024...
+Run 1: 0.77 ms
+Run 2: 0.70 ms
+Run 3: 0.70 ms
+Run 4: 0.69 ms
+Run 5: 0.67 ms
+Run 6: 0.68 ms
+Run 7: 0.67 ms
+Run 8: 0.67 ms
+Run 9: 0.68 ms
+Run 10: 0.70 ms
+Run 11: 0.67 ms
+Run 12: 0.69 ms
+Run 13: 0.68 ms
+Run 14: 0.67 ms
+Run 15: 0.68 ms
+Run 16: 0.67 ms
+Run 17: 0.68 ms
+Run 18: 0.68 ms
+Run 19: 0.70 ms
+Run 20: 0.68 ms
+Run 21: 0.70 ms
+Run 22: 0.58 ms
+Run 23: 0.19 ms
+Run 24: 0.19 ms
+Run 25: 0.19 ms
+Run 26: 0.19 ms
+Run 27: 0.19 ms
+Run 28: 0.20 ms
+Run 29: 0.19 ms
+Run 30: 0.28 ms
+Run 31: 0.19 ms
+Run 32: 0.19 ms
+Run 33: 0.18 ms
+Run 34: 0.19 ms
+Run 35: 0.19 ms
+Run 36: 0.19 ms
+Run 37: 0.19 ms
+Run 38: 0.18 ms
+Run 39: 0.19 ms
+Run 40: 0.18 ms
+Run 41: 0.18 ms
+Run 42: 0.16 ms
+Run 43: 0.18 ms
+Run 44: 0.18 ms
+Run 45: 0.18 ms
+Run 46: 0.18 ms
+Run 47: 0.18 ms
+Run 48: 0.18 ms
+Run 49: 0.18 ms
+Run 50: 0.18 ms
+
+⏱️ Avg duration over 50 runs: 0.41 ms @ 1024×1024
+🐢 CPU duration: 3.48 ms @ 1024×1024
+
+⚖️ GPU vs CPU Speedup: ~8.6x
+
+
+```
+### 📈 Result Summary
+
+| Metric                 | Value       | Notes                       |
+| ---------------------- | ----------- | --------------------------- |
+| **GPU Avg**            | **0.41 ms** | Average over 50 runs        |
+| **GPU Stable Phase**   | **0.18 ms** | From Run 23 onward          |
+| **CPU Duration**       | 3.48 ms     | Baseline (no FADE, no CUDA) |
+| **GPU vs CPU Speedup** | \~**8.6×**  | Effective real-time speedup |
+
+### 🔬 Runtime Behavior Breakdown
+
+* **Warmup Phase (Runs 1–10)**: Shader/init overhead & memory allocation
+* **Transition Phase (Runs 11–22)**: Kernel caching & scheduling stabilizes
+* **Stable Phase (Runs 23–50)**: GPU executes consistently at **0.18 ms**
+
+### 🎯 Why It Matters
+
+FADE enables **ultra-low-latency GPU compute**, even for small workloads like 1024×1024 matrix multiplications – making it ideal for:
+
+* Real-time inference (e.g., edge AI, robotics)
+* Reinforcement learning agents
+* Game physics or simulation pipelines
+* Embedded AI systems with tight latency budgets
+
+---
 ### 📌 Notes:
 
 * FADE corrects PyTorch's underreporting of AMD hardware properties
