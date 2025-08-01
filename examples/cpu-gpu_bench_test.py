@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# fade_bench.py
+# cpu-gpu_bench_test.py
 # python fade_bench.py --size 4096 --runs 5 --cpu --event
 # --size: Matrixgröße (z. B. 2048, 4096)
 # --runs: Anzahl der Wiederholungen
