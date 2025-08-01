@@ -82,7 +82,7 @@ Anyone using AMD GPUs for serious workloads should be aware of these limitations
 - ✅ Monkey-patch – **no rebuild required**
 - ✅ Works with `torch.cuda.get_device_properties()`
 - ✅ Smart correction of `multi_processor_count` and `warp_size`
-- ✅ Up to **145x performance speedup** in matrix ops
+- ✅ Up to **145x performance speedup** in matrix ops, not linear!
 
 ---
 
