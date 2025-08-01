@@ -653,7 +653,7 @@ print(f"🚀 vs Baseline (164.76ms @ 2048x2048): ~{164.76 / (avg/8):.1f}x speedu
 ```python
 #!/usr/bin/env python3
 # cpu-gpu_bench_test.py
-# python3 fade_bench.py --size 4096 --runs 5 --cpu --event
+# python3 cpu-gpu_bench_test.py --size 4096 --runs 5 --cpu --event
 # --size: Matrixgröße (z. B. 2048, 4096)
 # --runs: Anzahl der Wiederholungen
 # --cpu: Optionaler CPU-Vergleich
