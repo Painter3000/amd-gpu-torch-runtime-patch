@@ -135,7 +135,7 @@ Run 5: 6.75 ms
 * FADE corrects PyTorch's underreporting of AMD hardware properties
 * No rebuild or C++ compilation required
 * GPU fully utilized: 72 MPs × 64 warp = **4608 threads**
-* Compatible with any AMD RDNA2 GPU (gfx1030+)
+* Compatible with any AMD RDNA2/3/4... GPUs
 
 ---
 
