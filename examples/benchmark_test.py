@@ -8,7 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 # 🔧 Setze FADE-Parameter für reproduzierbare Performance
 os.environ["FADE_FORCE_WARP_SIZE"] = "64"
-os.environ["FADE_FORCE_MP_COUNT"] = "72" # Wert für andere GPUs dementsprechend anpassen / Adjust value for other GPUs accordingly
+os.environ["FADE_FORCE_MP_COUNT"] = "72"
 
 # 🔕 Deaktiviere FADE-Logger für saubere Ausgabe
 logging.getLogger("FADE").setLevel(logging.CRITICAL)
@@ -50,3 +50,4 @@ for i, dur in enumerate(durations):
 avg = sum(durations) / len(durations)
 print(f"\n⏱️ Avg duration over {num_runs} runs: {avg:.2f} ms @ 4096×4096")
 print(f"🚀 vs Baseline (164.76ms @ 2048x2048): ~{164.76 / (avg/8):.1f}x speedup")
+
