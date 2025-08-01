@@ -129,6 +129,43 @@ Run 5: 6.75 ms
 
 ⚖️ GPU vs CPU Speedup: ~14.5x
 ```
+### FADE v1.1+ matrix multiplication at 2048×2048 over 50 runs:
+```bash
+python3 ./examples/cpu-gpu_bench_test.py --size 2048 --runs 50 --cpu --event
+```
+
+### ✅ Output:
+
+```
+🚀 FADE Benchmark: Matrix Multiplication on GPU
+📐 Size: 2048×2048, 🔁 Runs: 50
+
+🔥 GPU Warmup @ 2048×2048...
+Run 1: 4.99 ms
+Run 2: 4.59 ms
+Run 3: 4.59 ms
+Run 4: 2.72 ms
+Run 5: 1.08 ms
+Run 6: 1.04 ms
+Run 7: 0.98 ms
+Run 8: 0.95 ms
+Run 9: 1.06 ms
+Run 10: 0.94 ms
+...
+Run 45: 0.95 ms
+Run 46: 0.95 ms
+Run 47: 0.95 ms
+Run 48: 0.95 ms
+Run 49: 0.95 ms
+Run 50: 0.95 ms
+
+⏱️ Avg duration over 50 runs: 1.22 ms @ 2048×2048
+🐢 CPU duration: 15.95 ms @ 2048×2048
+
+⚖️ GPU vs CPU Speedup: ~13.1x
+```
+Benchmark @ 2048×2048 over 50 runs:
+![2048x2048-Bench](assets/benchmark_plot_2048x2048.png)
 
 ### 📌 Notes:
 
